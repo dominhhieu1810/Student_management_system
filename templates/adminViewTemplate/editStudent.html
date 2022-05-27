@@ -1,0 +1,23 @@
+{% extends 'adminViewTemplate/base.html' %}
+{% block pageTitle %}
+    Chỉnh sửa sinh viên| tên người dùng: {{ last_name }} | ID: {{ id }}
+{% endblock pageTitle %}
+{% block mainContent %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"></h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        {% url 'saveStudentEdit' as action_path %}
+                        {% include 'adminViewTemplate/studentForm.html' with messages=messages form=form action_path=action_path button_text="Sửa" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock mainContent %}

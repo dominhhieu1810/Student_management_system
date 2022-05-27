@@ -1,0 +1,54 @@
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{% static "dist/img/avatar.png" %}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user.first_name }} {{ user.last_name }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="{% url 'studentHome' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                      Trang chủ
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'viewAttendance' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                      Thông tin điểm danh
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'viewMark' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                      Thông tin điểm
+                  </p>
+                </a>
+              </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

@@ -1,0 +1,122 @@
+contentSidebar
+{% load static %}
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{% static "dist/img/avatar5.png" %}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">{{ user.username }}</a>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    {% url 'addTeacher' as addTeacher %}
+                    <a href="{{ addTeacher }}" class="nav-link {% if request.path == addTeacher %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Thêm giảng viên
+                        </p>
+                    </a>
+                </li>
+                {% url 'manageTeacher' as manageTeacher %}
+                {% url 'editTeacher' teacherID=id as editTeacher %}
+                <li class="nav-item">
+                    <a href="{{ manageTeacher }}"
+                       class="nav-link {% if request.path == manageTeacher %} active {% endif %} {% if request.path == editTeacher %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Quản lí giảng viên
+                        </p>
+                    </a>
+                </li>
+                {% url 'addStudent' as addStudent %}
+                <li class="nav-item">
+                    <a href="{{ addStudent }}" class="nav-link {% if request.path == addStudent %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Thêm sinh viên
+                        </p>
+                    </a>
+                </li>
+                {% url 'manageStudent' as manageStudent %}
+                {% url 'editStudent' studentID=id as editStudent %}
+                <li class="nav-item">
+                    <a href="{{ manageStudent }}"
+                       class="nav-link {% if request.path == manageStudent %} active {% endif %} {% if request.path == editStudent %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Quản lí sinh viên
+                        </p>
+                    </a>
+                </li>
+                {% url 'addCourse' as addCourse %}
+                <li class="nav-item">
+                    <a href="{{ addCourse }}" class="nav-link {% if request.path == addCourse %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Thêm chứng chỉ
+                        </p>
+                    </a>
+                </li>
+                {% url 'manageCourse' as manageCourse %}
+                {% url 'editCourse' courseID=id as editCourse %}
+                <li class="nav-item">
+                    <a href="{{ manageCourse }}"
+                       class="nav-link {% if request.path == manageCourse %} active {% endif %} {% if request.path == editCourse %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Quản lý chứng chỉ
+                        </p>
+                    </a>
+                </li>
+                {% url 'addSubject' as addSubject %}
+                <li class="nav-item">
+                    <a href="{{ addSubject }}" class="nav-link {% if request.path == addSubject %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Thêm môn học
+                        </p>
+                    </a>
+                </li>
+                {% url 'manageSubject' as manageSubject %}
+                {% url 'editSubject' subjectID=id as editSubject %}
+                <li class="nav-item">
+                    <a href="{{ manageSubject }}"
+                       class="nav-link {% if request.path == manageSubject %} active {% endif %} {% if request.path == editSubject %} active {% endif %}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Quản lý môn học
+                        </p>
+                    </a>
+                </li>
+                {% url 'manageSession' as manageSession %}
+                <li class="nav-item">
+                    <a href="{{ manageSession }}"
+                       class="nav-link {% if request.path == manageSession %} active {% endif %} ">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Quản lý khóa học
+                        </p>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,23 @@
+{% extends 'adminViewTemplate/base.html' %}
+{% block pageTitle %}
+    Thêm chứng chỉ
+{% endblock pageTitle %}
+{% block mainContent %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"></h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        {% url 'saveCourse' as action_path %}
+                        {% include 'adminViewTemplate/courseForm.html' with messages=messages form=form action_path=action_path button_text="Tạo" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock mainContent %}
